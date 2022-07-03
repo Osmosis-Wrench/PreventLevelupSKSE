@@ -1,3 +1,5 @@
+#include "extend.h"
+
 #ifdef SKYRIM_AE
 extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
 	SKSE::PluginVersionData v;
@@ -52,6 +54,8 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a
 extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
 {
 	logger::info("loaded plugin");
+
+	extend::CallbackProcessorEx::Install();
 
 	SKSE::Init(a_skse);
 
