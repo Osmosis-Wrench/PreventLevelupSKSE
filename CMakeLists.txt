@@ -176,7 +176,7 @@ add_library(
 	${sources}
 	${CMAKE_CURRENT_BINARY_DIR}/include/Version.h
 	${CMAKE_CURRENT_BINARY_DIR}/version.rc
-	.clang-format "src/extend.h")
+	.clang-format "src/extend.h" "src/extend.cpp")
 
 target_compile_features(
 	${PROJECT_NAME}
