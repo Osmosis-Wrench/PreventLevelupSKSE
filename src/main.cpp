@@ -2,7 +2,7 @@
 extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
 	SKSE::PluginVersionData v;
 	v.PluginVersion(Version::MAJOR);
-	v.PluginName("examplePlugin");
+	v.PluginName("GameDelegateEX");
 	v.AuthorName("OsmosisWrench");
 	v.UsesAddressLibrary(true);
 	v.CompatibleVersions({ SKSE::RUNTIME_LATEST });
@@ -31,7 +31,7 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a
 	logger::info(FMT_STRING("{} v{}"), Version::PROJECT, Version::NAME);
 
 	a_info->infoVersion = SKSE::PluginInfo::kVersion;
-	a_info->name = "examplePlugin";
+	a_info->name = "GameDelegateEX";
 	a_info->version = Version::MAJOR;
 
 	if (a_skse->IsEditor()) {

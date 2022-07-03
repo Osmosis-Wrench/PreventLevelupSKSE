@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-set(NAME "exampleplugin")
+set(NAME "GameDelegateEx")
 set(VERSION 1.0.0)
 set(VR_VERSION 1)
 set(AE_VERSION 1)
@@ -176,7 +176,7 @@ add_library(
 	${sources}
 	${CMAKE_CURRENT_BINARY_DIR}/include/Version.h
 	${CMAKE_CURRENT_BINARY_DIR}/version.rc
-	.clang-format)
+	.clang-format "src/extend.h")
 
 target_compile_features(
 	${PROJECT_NAME}
