@@ -2,9 +2,9 @@
 
 namespace extend
 {
-	void CallbackProcessorEx::ProcessEx(const RE::GString& a_methodName, RE::FxDelegateHandler::CallbackFn* a_method)
+	void CallbackProcessorEx::ProcessEx(CallbackProcessor*, const RE::GString& a_methodName, RE::FxDelegateHandler::CallbackFn* a_method)
 	{
-		RE::DebugMessageBox("test1");
+		logger::warn("fired!");
 		_ProcessFn(this, a_methodName, a_method);
 	};
 

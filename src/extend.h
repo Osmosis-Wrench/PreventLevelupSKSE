@@ -15,7 +15,7 @@ namespace extend
 		static void Install();
 
 	public:
-		virtual void ProcessEx(const RE::GString& a_methodName, RE::FxDelegateHandler::CallbackFn* a_method);
+		virtual void ProcessEx(CallbackProcessor*, const RE::GString& a_methodName, RE::FxDelegateHandler::CallbackFn* a_method);
 
 	private:
 		using ProcessFn = decltype(&RE::FxDelegateHandler::CallbackProcessor::Process);
