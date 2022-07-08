@@ -22,4 +22,18 @@ namespace extend
 
 		inline static REL::Relocation<ProcessFn> _ProcessFn;
 	};
+
+	class StatsMenuEx : public RE::StatsMenu
+	{
+	public:
+		static void Install();
+
+	public:
+		void AcceptEx(StatsMenu*, CallbackProcessor* a_processor);
+
+	private:
+		using AcceptFn = decltype(&RE::StatsMenu::Accept);
+
+		inline static REL::Relocation<AcceptFn> originalAcceptFunction;
+	};
 }
