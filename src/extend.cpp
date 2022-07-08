@@ -16,10 +16,13 @@ namespace extend
 		logger::warn("Installed!1");
 	};
 
-	void StatsMenuEx::AcceptEx(StatsMenu*, CallbackProcessor* a_processor)
+	void StatsMenuEx::AcceptEx(RE::FxDelegateHandler::CallbackProcessor* a_processor)
 	{
-		logger::warn("fired accept");
-		originalAcceptFunction(this, a_processor);
+		originalAcceptFunction(this, a_processor); // like everything this is basically just stolen from Qudix. seriously one day I'll try and do something that he hasn't already done and i'll be so totall lost.
+		fxDelegate->callbacks.Remove("SetFadedIn");
+		a_processor->Process("SetFadedIn", [](const RE::FxDelegateArgs&) {
+			//nop
+		});
 	}
 
 	void StatsMenuEx::Install()

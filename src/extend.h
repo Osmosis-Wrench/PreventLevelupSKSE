@@ -29,7 +29,7 @@ namespace extend
 		static void Install();
 
 	public:
-		void AcceptEx(StatsMenu*, CallbackProcessor* a_processor);
+		void AcceptEx(CallbackProcessor* a_processor);
 
 	private:
 		using AcceptFn = decltype(&RE::StatsMenu::Accept);
