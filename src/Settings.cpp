@@ -14,8 +14,8 @@ bool Settings::LoadSettings()
 		ini.SetValue(a_section, a_key, std::to_string(a_value).c_str(), a_comment);
 	};
 
-	get_value(hotKey, "Settings", "Activation Hotkey", ";Hold hotkey while opening the Skills Menu to trigger Levelup. Default is Left Shift\n;Keyboard scan codes : https://wiki.nexusmods.com/index.php/DirectX_Scancodes_And_How_To_Use_Them\n;Gamepad scan codes : https://geckwiki.com/index.php?title=DisableButton#XBox_Controller_Button_Codes");
-	get_value(inverted, "Settings", "Default action", ";With this enabled, default functionality will be inverted. Holding hotkey while menu opening will prevent levelup.");
+	get_value(hotKey, "Settings", "Activation Hotkey", ";Hold hotkey while opening the Skills Menu to trigger Levelup popup menu. Default is Left Shift\n;Keyboard scan codes : https://wiki.nexusmods.com/index.php/DirectX_Scancodes_And_How_To_Use_Them\n;Gamepad scan codes : https://geckwiki.com/index.php?title=DisableButton#XBox_Controller_Button_Codes");
+	get_value(inverted, "Settings", "Inverted", ";With this enabled, default functionality will be inverted. Holding hotkey while menu opening will prevent the levelup popup menu.");
 	(void)ini.SaveFile(path);
 
 	return true;
