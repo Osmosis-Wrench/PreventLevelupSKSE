@@ -1,4 +1,23 @@
 #include "extend.h"
+#include "Settings.h"
+
+void MessageHandler(SKSE::MessagingInterface::Message* a_message)
+{
+	switch (a_message->type) {
+	case SKSE::MessagingInterface::kPostLoad:
+		{
+			Settings::GetSingleton()->LoadSettings();
+		}
+		break;
+	case SKSE::MessagingInterface::kDataLoaded:
+		{
+			extend::KeyInputEventHandler::Register();
+		}
+		break;
+	default:
+		break;
+	}
+}
 
 #ifdef SKYRIM_AE
 extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
@@ -58,6 +77,9 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_s
 	extend::StatsMenuEx::Install();
 
 	SKSE::Init(a_skse);
+
+	const auto messaging = SKSE::GetMessagingInterface();
+	messaging->RegisterListener(MessageHandler);
 
 	return true;
 }

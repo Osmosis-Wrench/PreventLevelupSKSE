@@ -6,6 +6,7 @@
 #include "RE/Skyrim.h"
 #include "SKSE/SKSE.h"
 
+#include <SimpleIni.h>
 #include <spdlog/sinks/basic_file_sink.h>
 #include <xbyak/xbyak.h>
 
@@ -14,6 +15,7 @@
 namespace logger = SKSE::log;
 namespace string = SKSE::stl::string;
 using namespace std::literals;
+using Key = RE::BSWin32KeyboardDevice::Key;
 
 namespace stl
 {
