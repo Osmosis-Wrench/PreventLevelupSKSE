@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-set(NAME "GameDelegateEx")
+set(NAME "PreventLevelupSKSE")
 set(VERSION 1.0.0)
 set(VR_VERSION 1)
 set(AE_VERSION 1)
@@ -77,7 +77,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE STR
 # ---- Project ----
 
 project(
-	GameDelegateEx
+	PreventLevelupSKSE
 	VERSION 1.0.0
 	LANGUAGES CXX
 )
